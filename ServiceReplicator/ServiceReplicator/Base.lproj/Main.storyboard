@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ServiceReplicator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="AGSMapView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comma sep. services, 0,1,4" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ahF-wE-xYU">
+                                <rect key="frame" x="16" y="58" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="iYs-pD-UUC"/>
+                                    <constraint firstAttribute="height" constant="30" id="whk-0U-N5S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sync Enabled Service url" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="06A-74-OxG">
+                                <rect key="frame" x="16" y="20" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="HZj-9q-lQc"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ptd-JQ-2iL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yf3-5g-hrf">
+                                <rect key="frame" x="41" y="96" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AS7-cv-Hdj"/>
+                                    <constraint firstAttribute="width" constant="200" id="dvj-Zk-Qah"/>
+                                </constraints>
+                                <state key="normal" title="Create .geodatabase">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createGeodatabase:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4RV-kU-tOc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ahF-wE-xYU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="O3L-3f-9wd"/>
+                            <constraint firstItem="06A-74-OxG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Re5-eu-kSK"/>
+                            <constraint firstItem="06A-74-OxG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YBb-bX-yJK"/>
+                            <constraint firstItem="yf3-5g-hrf" firstAttribute="centerX" secondItem="ahF-wE-xYU" secondAttribute="centerX" id="i67-CJ-pph"/>
+                            <constraint firstItem="ahF-wE-xYU" firstAttribute="top" secondItem="06A-74-OxG" secondAttribute="bottom" constant="8" id="jWY-B6-dvr"/>
+                            <constraint firstItem="yf3-5g-hrf" firstAttribute="top" secondItem="ahF-wE-xYU" secondAttribute="bottom" constant="8" id="ppE-r3-J0R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="8bC-Xf-vdC" id="hmb-NO-C4x"/>
+                        <outlet property="serviceListTextField" destination="ahF-wE-xYU" id="Q9k-UR-yfr"/>
+                        <outlet property="urlTextField" destination="06A-74-OxG" id="LZP-YD-0b3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
