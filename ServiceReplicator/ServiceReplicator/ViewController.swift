@@ -46,9 +46,9 @@ class ViewController: UIViewController {
             if let layerIdIntValue = layerId.toInt() {
                 layerIds.addObject(layerIdIntValue)
             }
-        }        
+        }
         
-        self.generateParameters = AGSGDBGenerateParameters(extent: self.mapView.maxEnvelope, layerIDs: layerIds)
+        self.generateParameters = AGSGDBGenerateParameters(extent: self.mapView.maxEnvelope, layerIDs: layerIds as [AnyObject])
         self.generateParameters?.syncModel = AGSGDBSyncModel.PerLayer
         self.generateParameters?.outSpatialReference = self.mapView.spatialReference
         
@@ -82,7 +82,7 @@ class ViewController: UIViewController {
         
         if UIDevice.currentDevice().model.lowercaseString.rangeOfString("simulator") != nil{
             path = self.extractUserDesktopPath(NSHomeDirectory());
-            path = path ?? (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DesktopDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as String)
+            path = path ?? (NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DesktopDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as! String)
             
         }else{
             path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0] as? String
